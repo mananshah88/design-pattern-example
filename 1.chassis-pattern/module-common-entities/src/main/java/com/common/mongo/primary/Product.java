@@ -2,8 +2,8 @@ package com.common.mongo.primary;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "item")
-public class Item {
+@Document(collection = "product")
+public class Product {
 
 	private String id;
 	private String name;
@@ -33,14 +33,14 @@ public class Item {
 		this.description = description;
 	}
 
-	public Item(String id, String name, String description) {
+	public Product(String id, String name, String description) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 	}
 
-	public Item() {
+	public Product() {
 		super();
 	}
 
