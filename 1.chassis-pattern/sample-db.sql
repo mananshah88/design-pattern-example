@@ -1,4 +1,4 @@
-use <sample-database-1>
+use <database1>
 create table customer (
     id integer NOT NULL AUTO_INCREMENT PRIMARY KEY,
     firstname text NOT NULL,
@@ -7,7 +7,7 @@ create table customer (
 );
 insert into customer (firstname, lastname, email ) values ('Rohit', 'Gupta', 'sampleemail@google.com'), ('Ajay', 'Mishra', 'sampleemailid@google.com');
 
-use <sample-database-2>
+use <database2>
 create table purchase (
     id integer NOT NULL AUTO_INCREMENT PRIMARY KEY,
     customerId integer NOT NULL,
