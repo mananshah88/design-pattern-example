@@ -25,11 +25,7 @@ import com.zaxxer.hikari.HikariDataSource;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "secondaryEntityManagerFactory",
         transactionManagerRef = "secondaryTransactionManager",
-        basePackages = {
-        		"com.pattern.chassis.repository.maria.secondary", 
-        		"com.microservice.purchase.repository.maria.secondary"
-        })
-        
+		basePackages = { "com.microservice.purchase.repository.maria.secondary" })
 public class SecondaryMariaDBConfig {
 
     @Bean(name = "secondaryDataSourceProperties")

@@ -24,10 +24,7 @@ import java.util.Map;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "primaryEntityManagerFactory",
         transactionManagerRef = "primaryTransactionManager",
-        basePackages = {
-        		"com.pattern.chassis.repository.maria.primary", 
-        		"com.microservice.purchase.repository.maria.primary"
-        })
+		basePackages = { "com.microservice.customer.repository.maria.primary" })
 public class PrimaryMariaDBConfig {
 
     @Primary
@@ -58,7 +55,7 @@ public class PrimaryMariaDBConfig {
 
         return primaryEntityManagerFactoryBuilder
                 .dataSource(primaryDataSource)
-                .packages("com.pattern.chassis.model.maria.primary")
+                .packages("com.common.maria.primary")
                 .persistenceUnit("primaryDataSource")
                 .properties(primaryJpaProperties)
                 .build();
