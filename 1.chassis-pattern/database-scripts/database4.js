@@ -1,5 +1,5 @@
 use <database4>
-db.database4.feedback.insertMany( [
+db.feedback.insertMany( [
 	{ "detail" : "Good Mobile" },
 	{ "detail" : "Nice TV" },
 	{ "detail" : "Awesome USB" },
