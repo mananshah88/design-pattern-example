@@ -40,8 +40,7 @@ More details like pros-cons, dos-dont's are mentioned here:
 
 **About the Project Structure...**
 
-- Let say, we have an an e-commerce application. In which, we have used 2 RDBMS(Maria DB) databases and 2 NoSQL(Mongo) databases.
-- It is a micro-service architecture and has the following micro services.
+Let say, we have an an e-commerce application. In which, we have used 2 RDBMS(Maria DB) databases and 2 NoSQL(Mongo) databases. Also, it is a micro-service architecture and has the following micro services.
 
 1.) Customer Microservice
 - Name: microservice-customer
@@ -68,5 +67,13 @@ More details like pros-cons, dos-dont's are mentioned here:
 - Endpoint: 
 
 
-- asdf
-- asdf
+**Advantage of Chassis**
+
+If we do not implement the Chassis then 
+- we have to configure DB connection, connection-pool and other common(duplicate) configuration in every microservice.
+- We have to duplicate the same thing in every micro service. (Reduandant code)
+- We have to test everything, everytime in every micro service. (More testing)
+- Some change(Let say change in IP, version, driver etc...) need to change in every micro service. (More maintaince)
+
+While here you can see every thing is configured in "module-chassis" module.
+- So no reduandant code, less testing and no maintaince
