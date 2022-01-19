@@ -35,7 +35,7 @@ More details like pros-cons, dos-dont's are mentioned here:
 
 - There are so many cross-concerns availbale for which one can implement Chassis. But I choose Database service. (In this repository, I have implemented Chassis for different DB connection, configuration and connection pool mechanism.)
 
-- The project has used the following technologies: Spring Boot, Java, MariaDB and MongoDB
+- The project has used the following technologies: Spring Boot(2.5.8), Java-8, MariaDB(10.3) and MongoDB(4.0)
 
 
 **About the Project Structure...**
@@ -46,25 +46,51 @@ Let say, we have an an e-commerce application. In which, we have used 2 RDBMS(Ma
 - Name: microservice-customer
 - Databse: database1 ( Hree, I have used mariadb )
 - Port: 8081
-- Endpoint: 
 
 2.) Purchase Microservice
 - Name: microservice-purchase
 - Databse: database2 ( I have used mariadb )
 - Port: 8082
-- Endpoint: 
 
 3.) Product Microservice
 - Name: microservice-product
 - Databse: database3 ( I have used mongodb )
 - Port: 8083
-- Endpoint: 
 
 4.) Feedback Microservice
 - Name: microservice-feedback
 - Databse: database1 ( I have used mongodb )
 - Port: 8084
-- Endpoint: 
+
+
+**How to Run**
+
+1.) Prepare the Database(s). ( Execute the scripts under "database-scripts" module )
+
+2.) Build the "module-common-entities" project by executing this command: 
+- cd module-common-entities/
+- ./gradlew build
+
+3.) Build the "module-chassis" project by executing this command: 
+- cd ../module-chassis/
+- ./gradlew build
+
+4.) Build and Run every microservice one by one.
+- cd ../microservice-customer/
+- ./gradlew build
+- cd ../microservice-purchase/
+- ./gradlew build
+- cd ../microservice-product/
+- ./gradlew build
+- cd ../microservice-feedback/
+- ./gradlew build
+
+5.) Call the following end points:
+- http://localhost:8081/customer
+- http://localhost:8082/purchase
+- http://localhost:8083/product
+- http://localhost:8084/feedback
+
 
 
 **Advantage of Chassis**
